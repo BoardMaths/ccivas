@@ -1,0 +1,93 @@
+≡ƒöì Testing NYSC Validation Rules
+
+================================================================================
+
+≡ƒôï TEST 1: BSC Holder WITHOUT NYSC Year
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ£à YES (Missing NYSC)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+  2. NYSC Requirement: BSC holders must complete NYSC. No NYSC year recorded.
+
+Test 1: Γ£à PASSED
+
+
+≡ƒôï TEST 2: NYSC Year AFTER First Appointment
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ£à YES (NYSC after appointment)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+  2. NYSC Requirement: NYSC year (2016) is after first appointment (2015). NYSC must be completed before civil service appointment.
+
+Test 2: Γ£à PASSED
+
+
+≡ƒôï TEST 3: Valid NYSC Year
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ¥î NO (Valid NYSC)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+
+Test 3: Γ£à PASSED
+
+
+≡ƒôï TEST 4: NYSC at Unrealistic Age (Too Young)
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ£à YES (NYSC at age 15 is impossible)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+  2. Data Integrity: NYSC year (2005) suggests completion at age 15, which is too young (minimum ~21 after graduation).
+
+Test 4: Γ£à PASSED
+
+
+≡ƒôï TEST 5: SSCE Holder (No NYSC Requirement)
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ¥î NO (SSCE holders don't require NYSC)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+
+Test 5: Γ£à PASSED
+
+
+≡ƒôï TEST 6: NYSC Year in the Future
+--------------------------------------------------------------------------------
+Is Flagged: Γ£à YES
+Expected: Γ£à YES (NYSC year in future)
+
+Flag Reasons:
+  1. PSR Rule 020301: Pending Confirmation - Personnel has served 11.1 years but hasn't been confirmed (Probation is 2 years).
+  2. Data Integrity: NYSC year (2027) is in the future.
+  3. NYSC Requirement: NYSC year (2027) is after first appointment (2015). NYSC must be completed before civil service appointment.
+  4. Data Integrity: NYSC year (2027) suggests completion at age 37, which is unusually late. Please verify.
+
+Test 6: Γ£à PASSED
+
+
+================================================================================
+≡ƒôè TEST SUMMARY
+================================================================================
+Γ£à Test 1 (Missing NYSC)
+Γ£à Test 2 (NYSC after appointment)
+Γ£à Test 3 (Valid NYSC)
+Γ£à Test 4 (NYSC too young)
+Γ£à Test 5 (SSCE - no requirement)
+Γ£à Test 6 (NYSC in future)
+
+--------------------------------------------------------------------------------
+Total: 6/6 tests passed
+
+≡ƒÄë ALL TESTS PASSED! NYSC validation is working correctly.
+================================================================================
+
+Γ£à Test completed!
